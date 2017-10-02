@@ -67,11 +67,11 @@ public class Driver {
     }
 
     public static void fairSort(Barber[] barbers, int index) {
-        System.out.println("fairSort: " + index);
         Barber indexBarber = barbers[index];
         for(int i = index; i > 0; i--) {
             if(barbers[i - 1].getTotal() - indexBarber.getTotal() >= 20) {
-                swapAndPush(barbers, i - 1, i);
+                swapAndPush(barbers, i - 1, index);//i
+                break;
             }
         }
     }
