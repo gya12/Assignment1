@@ -33,6 +33,10 @@ public class Driver {
         printBarbers(b1);
         updateOrder(b1);
         printBarbers(b1);
+        System.out.println("*****************");
+        printBarbers(b2);
+        updateOrder(b2);
+        printBarbers(b2);
 
         //printBarbers(b2);
         //updateOrder(b2);
@@ -70,8 +74,13 @@ public class Driver {
         Barber indexBarber = barbers[index];
         for(int i = index; i > 0; i--) {
             if(barbers[i - 1].getTotal() - indexBarber.getTotal() >= 20) {
-                swapAndPush(barbers, i - 1, index);//i
-                break;
+                swapAndPush(barbers, i - 1, index);
+
+                //indexBarber = barbers[index];
+                //keep the indexBarber
+                //update index
+                index = i - 1;
+
             }
         }
     }
